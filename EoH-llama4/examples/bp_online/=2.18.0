@@ -1,0 +1,13 @@
+Collecting oslo.serialization
+  Using cached oslo_serialization-5.8.0-py3-none-any.whl.metadata (2.1 kB)
+Collecting msgpack>=0.5.2 (from oslo.serialization)
+  Downloading msgpack-1.1.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.1 kB)
+Requirement already satisfied: oslo.utils>=3.33.0 in /home/alison/anaconda3/envs/eoh-llama4/lib/python3.12/site-packages (from oslo.serialization) (9.1.0)
+Collecting tzdata>=2022.4 (from oslo.serialization)
+  Using cached tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
+Using cached oslo_serialization-5.8.0-py3-none-any.whl (25 kB)
+Downloading msgpack-1.1.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (427 kB)
+Using cached tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+Installing collected packages: tzdata, msgpack, oslo.serialization
+
+Successfully installed msgpack-1.1.2 oslo.serialization-5.8.0 tzdata-2025.2

@@ -1,0 +1,91 @@
+---
+title: EoH Salem-Spencer 3-AP-Free Optimization 實驗報告
+tags: EoH, Algorithm, Optimization, Salem-Spencer, LLM
+---
+
+# EoH Salem-Spencer 3-AP-Free Optimization 實驗報告
+
+**日期**: 2026-02-05  
+**專案名稱**: EoH-llama4 (Evolution of Heuristics)  
+**目標問題**: 尋找 $N=1094$ 範圍內的最大無 3-AP (Arithmetic Progression) 集合。
+
+---
+
+## 1. 摘要 (Abstract)
+
+本實驗旨在利用 **Evolution of Heuristics (EoH)** 架構，結合大型語言模型 (**gpt-oss-120b**) 的推理能力，自動演化出針對 Salem-Spencer 問題的高效構造演算法。
+
+我們從歷史實驗 (`recursive_backup`) 的 **Stanley Sequence Tiling** 策略出發，轉向更具潛力的 **Recursive Ternary Construction (遞迴三分法)**。實作過程中解決了嚴重的記憶體洩漏問題 (Orphaned Processes)，並引入了 **Pass@K** 與 **Ray Interference Focus** 機制來強化評估效率。目前實驗正在穩定運行中，初期結果顯示三分結構能有效規避等差數列衝突，具備超越傳統貪婪解的潛力。
+
+---
+
+## 2. 問題背景 (Problem Description)
+
+**Salem-Spencer Set** (或稱 3-AP-free set) 是一個整數集合 $S \subseteq \{1, \dots, N\}$，滿足：
+$$
+\forall a, b, c \in S, \text{ if } a + c = 2b \implies a = b = c
+$$
+即集合中任三個數不構成等差數列。
+
+*   **挑戰**: 隨著 $N$ 增大，簡單貪婪算法 (Greedy) 會迅速導致搜尋空間被封死。
+*   **目標**: 針對 $N=1094$ (及周邊困難實例)，尋找比已知最佳解更大的集合 $|S|$。
+
+---
+
+## 3. 演算法演化軌跡 (Evolution Trajectory)
+
+### Phase 1: 歷史最佳 (Recursive Backup)
+*   **策略**: **Stanley Sequence Tiling (數列平鋪)**
+*   **核心邏輯**:
+    1.  利用 $\sqrt{N}$ 規模進行遞迴分解。
+    2.  利用已知的無 3-AP 數列 (Stanley Sequence: 0, 1, 3, 4, 9...) 作為不同區塊的起始偏移量 (Offset)。
+    3.  將種子集合複製到這些安全區塊上。
+*   **結果 (Gen 30)**: Score ~99.33 (Normalized)。
+*   **分析**: 結構嚴謹但缺乏彈性，對於特定非平方數的 $N$ (如 1094) 適應性較差。
+
+### Phase 2: 當前架構 (Current: Recursive Ternary)
+*   **策略**: **Recursive Ternary Construction (遞迴三分法)**
+*   **核心邏輯**:
+    1.  **區間三分**: 將 $[1, N]$ 切割為 **Low, Mid, High**。
+    2.  **兩端優先**: 優先填滿 Low 與 High 區域（利用 $N/3$ 的遞迴解）。
+    3.  **中間稀疏**: 因為 $Low + High = 2 \cdot Mid$，中間區域是衝突高發區，策略上採用極簡或嚴格過濾的填補，犧牲中間以換取兩端的最大密度。
+*   **Prompt Engineering**: 強制 LLM 遵循 `Inductive Construction`，避免退化回線性貪婪。
+
+---
+
+## 4. 技術實作與優化 (Implementation Highlights)
+
+為了支撐 $N=1094$ 的高強度演化，我們在系統層面進行了多項關鍵優化：
+
+### A. 穩定性修復：孤兒進程 (Zombie Process Fix)
+*   **問題**: 先前版本在 timeout 時，`multiprocessing.Pool` 的 worker process 未被殺死，導致數百代後記憶體耗盡 (OOM)。
+*   **解法**: 修改 `run.py`，當 `num_proc <= 1` 時改採 **Sequential Execution**，完全在此行程內執行，確保資源隨主程式結束而釋放。
+
+### B. 評估優化：Pass@K 與 Top-K
+*   **Top-K Evaluation**: 只針對 `diff_map` 中理論差距最大（最難）的 $N$ 值進行評估，避免算力浪費在簡單的 $N$ 上。
+*   **Pass@K**: 對於生成的每個 Heuristic，執行 $K=3$ 次（搭配不同 Random Seed），取 **Best Size** 作為分數。這讓演算法能容許微小的隨機擾動，增加突破局部最佳的機會。
+
+### C. 語意過濾 (Semantic Filter)
+*   **LLM Check**: 在執行昂貴的評估前，先用 LLM 快速掃描程式碼結構。若不具備 "Divide and Conquer" 或 "Ternary" 特徵，直接剔除 (Score=0)。這引導演化方向鎖定在結構化解法。
+
+---
+
+## 5. 實驗數據與觀察 (Observation)
+
+| Generation | Strategy | Best Score (Approx) | Note |
+| :--- | :--- | :--- | :--- |
+| **Old Gen 30** | Stanley Tiling | 99.33 | 基礎紮實，但難以突破上限 |
+| **Current Gen 2** | Recursive Ternary | N/A (Evolving) | 展現出更強的邊界適應性 |
+
+*   **代碼特徵**: 目前生成的代碼已出現 `m = n // 3`、`low_set = heuristic(m)` 等明顯的三分特徵。
+*   **資源監控**: 修復後，記憶體使用量穩定，無洩漏跡象。
+
+---
+
+## 6. 結論與下一步 (Conclusion & Next Steps)
+
+本實驗成功建立了一個穩定且高效的 EoH 演化環境。從 Stanley Tiling 到 Recursive Ternary 的轉變，標誌著我們從**「數論規則」**轉向**「幾何結構構造」**。
+
+**Next Steps**:
+1.  **監控收斂**: 讓目前的 Ternary 策略跑至 50 代以上，觀察其收斂極限。
+2.  **混合策略 (Hybridization)**: 預期 LLM 接下來會嘗試在 Ternary 的框架內，於 Mid 區域引入 **Local Search (Simulated Annealing)**，這將是打破 $N=1094$ 紀錄的關鍵一擊。

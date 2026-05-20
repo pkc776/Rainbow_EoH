@@ -1,0 +1,9 @@
+Collecting debtcollector
+  Using cached debtcollector-3.0.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting wrapt>=1.7.0 (from debtcollector)
+  Downloading wrapt-2.0.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (8.8 kB)
+Using cached debtcollector-3.0.0-py3-none-any.whl (23 kB)
+Downloading wrapt-2.0.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (121 kB)
+Installing collected packages: wrapt, debtcollector
+
+Successfully installed debtcollector-3.0.0 wrapt-2.0.0

@@ -1,0 +1,400 @@
+1 1 Theorem 10
+2 2 Theorem 10
+3 4 Theorem 10
+4 5 Theorem 13
+5 9 Theorem 12
+6 11 Theorem 12
+7 13 Theorem 22
+8 14 Split 4+4
+9 20 Search
+10 24 Search
+11 26 Search
+12 30 Search
+13 32 Search
+14 36 Search
+15 40 Split 8+7
+16 41 Split 8+8
+17 51 Search
+18 54 Theorem 10
+19 58 Theorem 10
+20 63 Theorem 10
+21 71 Search
+22 74 Theorem 22
+23 82 Search
+24 84 Search
+25 92 Search
+26 95 Split 13+13
+27 100 Theorem 14
+28 104 Theorem 14
+29 111 Search
+30 114 Search
+31 121 Split 16+15
+32 122 Split 16+16
+33 137 Search
+34 145 Search
+35 150 Search
+36 157 Search
+37 163 Theorem 10
+38 165 Theorem 10
+39 169 Theorem 10
+40 174 Theorem 10
+41 194 Search
+42 204 Search
+43 209 Search
+44 215 Theorem 22
+45 227 Search
+46 233 Search
+47 239 Theorem 12
+48 245 Search
+49 254 Search
+50 260 Search
+51 263 Search
+52 268 Search
+53 272 Search
+54 286 Search
+55 295 Theorem 14
+56 299 Theorem 14
+57 315 Search
+58 321 Search
+59 331 Search
+60 331 Search
+61 332 Search
+62 341 Search
+63 350 Search
+64 365 Split 32+32
+65 383 Theorem 17
+66 391 Theorem 17
+67 399 Theorem 17
+68 405 Theorem 17
+69 408 Search
+70 409 Search
+71 416 Search
+72 423 Search
+73 440 Search
+74 444 Search
+75 454 Search
+76 457 Search
+77 462 Search
+78 470 Search
+79 475 Search
+80 480 Search
+81 549 Search
+82 567 Search
+83 580 Search
+84 585 Theorem 21
+85 613 Search
+86 614 Search
+87 632 Search
+88 638 Theorem 22
+89 660 Theorem 24
+90 663 Theorem 24
+91 669 Theorem 24
+92 670 Search
+93 676 Search
+94 689 Theorem 24
+95 695 Theorem 24
+96 709 Theorem 24
+97 736 Search
+98 742 Search
+99 760 Theorem 26
+100 762 Theorem 26
+101 765 Search
+102 768 Search
+103 783 Search
+104 786 Search
+105 788 Search
+106 795 Search
+107 807 Search
+108 809 Search
+109 833 Search
+110 841 Search
+111 853 Search
+112 854 Search
+113 859 Search
+114 864 Search
+115 897 Search
+116 899 Search
+117 905 Search
+118 907 Search
+119 916 Search
+120 928 Search
+121 930 Search
+122 937 Search
+123 938 Search
+124 947 Search
+125 956 Search
+126 1023 Search
+127 1075 Search
+128 1092 Search
+129 1115 Search
+130 1123 Search
+131 1132 Search
+132 1143 Search
+133 1148 Theorem 17
+134 1153 Search
+135 1154 Search
+136 1161 Search
+137 1178 Search
+138 1183 Search
+139 1186 Search
+140 1191 Search
+141 1198 Search
+142 1199 Search
+143 1201 Search
+144 1208 Search
+145 1218 Search
+146 1219 Search
+147 1224 Search
+148 1231 Search
+149 1233 Search
+150 1234 Search
+151 1241 Search
+152 1248 Search
+153 1265 Search
+154 1269 Search
+155 1279 Search
+156 1282 Search
+157 1287 Search
+158 1295 Search
+159 1300 Search
+160 1305 Search
+161 1410 Search
+162 1601 Search
+163 1628 Search
+164 1646 Search
+165 1690 Theorem 21
+166 1697 Theorem 21
+167 1707 Theorem 21
+168 1710 Theorem 21
+169 1777 Theorem 46
+170 1787 Theorem 46
+171 1794 Theorem 46
+172 1799 Theorem 46
+173 1803 Theorem 46
+174 1816 Theorem 46
+175 1820 Theorem 46
+176 1828 Theorem 46
+177 1830 Theorem 46
+178 1846 Theorem 46
+179 1848 Theorem 46
+180 1856 Theorem 46
+181 1864 Theorem 46
+182 1894 Theorem 46
+183 1901 Theorem 46
+184 1921 Theorem 46
+185 1992 Theorem 24
+186 1995 Theorem 24
+187 2001 Theorem 24
+188 2007 Theorem 24
+189 2013 Theorem 24
+190 2021 Theorem 24
+191 2027 Theorem 24
+192 2041 Theorem 24
+193 2178 Split 98+95
+194 2192 Split 98+96
+195 2211 Split 102+93
+196 2224 Split 101+95
+197 2230 Split 102+95
+198 2244 Split 102+96
+199 2264 Split 105+94
+200 2270 Split 105+95
+201 2284 Split 105+96
+202 2294 Split 101+101
+203 2299 Theorem 26
+204 2301 Theorem 26
+205 2314 Theorem 26
+206 2317 Theorem 26
+207 2330 Theorem 26
+208 2333 Theorem 26
+209 2361 Split 105+104
+210 2363 Split 105+105
+211 2377 Split 106+105
+212 2384 Split 106+106
+213 2405 Split 108+105
+214 2412 Split 108+106
+215 2424 Split 108+107
+216 2426 Split 108+108
+217 2474 Split 109+108
+218 2490 Split 110+108
+219 2512 Split 113+106
+220 2516 Split 112+108
+221 2526 Split 113+108
+222 2536 Split 114+108
+223 2558 Split 113+110
+224 2561 Split 112+112
+225 2571 Split 113+112
+226 2576 Split 113+113
+227 2586 Split 114+113
+228 2591 Split 114+114
+229 2656 Split 116+113
+230 2661 Split 116+114
+231 2672 Split 118+113
+232 2677 Split 118+114
+233 2687 Search
+234 2692 Search
+235 2694 Search
+236 2706 Search
+237 2709 Search
+238 2715 Search
+239 2717 Search
+240 2723 Search
+241 2725 Search
+242 2734 Search
+243 2745 Search
+244 2748 Search
+245 2755 Search
+246 2756 Search
+247 2765 Search
+248 2774 Search
+249 2858 Split 125+124
+250 2867 Split 125+125
+251 3001 Split 126+125
+252 3068 Split 126+126
+253 3139 Split 128+125
+254 3185 Split 129+125
+255 3201 Split 130+125
+256 3180 Search
+257 3241 Split 132+125
+258 3245 Split 135+123
+259 3254 Split 135+124
+260 3263 Split 135+125
+261 3277 Split 136+125
+262 3309 Split 139+123
+263 3318 Split 139+124
+264 3327 Split 139+125
+265 3335 Split 142+123
+266 3339 Split 143+123
+267 3348 Split 143+124
+268 3357 Split 143+125
+269 3371 Split 144+125
+270 3384 Split 146+124
+271 3393 Split 146+125
+272 3403 Split 147+125
+273 3405 Split 150+123
+274 3414 Split 150+124
+275 3423 Split 150+125
+276 3437 Split 151+125
+277 3451 Split 152+125
+278 3484 Split 154+124
+279 3493 Split 154+125
+280 3505 Search
+281 3519 Split 156+125
+282 3529 Split 157+125
+283 3545 Split 158+125
+284 3555 Split 159+125
+285 3565 Split 160+125
+286 3588 Search
+287 3594 Search
+288 3596 Search
+289 3606 Search
+290 3612 Search
+291 3614 Search
+292 3619 Search
+293 3623 Search
+294 3628 Search
+295 3629 Search
+296 3636 Search
+297 3653 Search
+298 3658 Search
+299 3661 Search
+300 3666 Search
+301 3673 Search
+302 3674 Search
+303 3676 Search
+304 3683 Search
+305 3693 Search
+306 3694 Search
+307 3699 Search
+308 3706 Search
+309 3708 Search
+310 3709 Search
+311 3716 Search
+312 3723 Search
+313 3740 Search
+314 3744 Search
+315 3754 Search
+316 3757 Search
+317 3762 Search
+318 3770 Search
+319 3775 Search
+320 3780 Search
+321 4124 Split 161+160
+322 4229 Split 161+161
+323 4560 Split 163+160
+324 4596 Split 164+160
+325 4684 Split 165+160
+326 4698 Split 166+160
+327 4718 Split 167+160
+328 4724 Split 168+160
+329 4785 Theorem 84
+330 4816 Theorem 84
+331 4847 Theorem 84
+332 4857 Theorem 84
+333 4882 Theorem 84
+334 4883 Theorem 84
+335 4928 Theorem 84
+336 4932 Theorem 84
+337 4964 Split 177+160
+338 4995 Split 179+159
+339 5000 Split 179+160
+340 5016 Split 180+160
+341 5032 Split 181+160
+342 5092 Split 182+160
+343 5106 Split 183+160
+344 5146 Split 184+160
+345 5251 Split 184+161
+346 5294 Split 186+160
+347 5305 Theorem 46
+348 5312 Theorem 46
+349 5315 Theorem 46
+350 5325 Theorem 46
+351 5334 Theorem 46
+352 5345 Theorem 46
+353 5350 Theorem 46
+354 5360 Theorem 46
+355 5367 Theorem 46
+356 5372 Theorem 46
+357 5376 Theorem 46
+358 5389 Theorem 46
+359 5393 Theorem 46
+360 5401 Theorem 46
+361 5403 Theorem 46
+362 5419 Theorem 46
+363 5421 Theorem 46
+364 5429 Theorem 46
+365 5437 Theorem 46
+366 5467 Theorem 46
+367 5474 Theorem 46
+368 5494 Theorem 46
+369 5877 Split 188+181
+370 5889 Split 189+181
+371 5905 Split 190+181
+372 5917 Split 191+181
+373 5942 Split 190+183
+374 5954 Split 191+183
+375 5974 Split 191+184
+376 5986 Theorem 24
+377 5988 Theorem 24
+378 5991 Theorem 24
+379 5997 Theorem 24
+380 6003 Theorem 24
+381 6009 Theorem 24
+382 6017 Theorem 24
+383 6023 Theorem 24
+384 6037 Theorem 24
+385 6226 Theorem 10
+386 6229 Theorem 10
+387 6231 Theorem 10
+388 6233 Theorem 10
+389 6237 Theorem 10
+390 6242 Theorem 10
+391 6342 Search
+392 6345 Search
+393 6351 Search
+394 6353 Search
+395 6359 Search
+396 6361 Search
+397 6370 Search
+398 6381 Search
+399 6384 Search
+400 6391 Search
