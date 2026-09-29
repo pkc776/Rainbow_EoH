@@ -2,7 +2,7 @@
 
 **Enhancing Large Language Models for Combinatorial Discovery**
 
-Rainbow EoH 以 EoH（Evolution of Heuristics）為基礎，結合大型語言模型（LLM）與演化搜尋，自動產生並改進尋找 **Salem–Spencer 集合**的啟發式演算法。專案著重於保留搜尋過程中的程式多樣性，以及讓評估結果更穩健。
+Rainbow EoH 以 Fei Liu 等作者提出的 [EoH（Evolution of Heuristics）](https://github.com/FeiLiu36/EoH) 為基礎，結合大型語言模型（LLM）與演化搜尋，自動產生並改進尋找 **Salem–Spencer 集合**的啟發式演算法。專案著重於保留搜尋過程中的程式多樣性，以及讓評估結果更穩健。
 
 Salem–Spencer 集合是 `{1, 2, ..., N}` 的子集合，其中任意三個相異元素都不能形成等差數列，也就是不存在 `x + z = 2y`。我們的目標是在這個限制下，找出盡可能大的集合。
 
@@ -46,6 +46,29 @@ python -m pip install ./EoH-llama4/eoh requests
 ```bash
 cd EoH-llama4/examples/salem_spencer
 python runEoH.py
+```
+
+## 致謝與引用
+
+本專案基於原始 EoH 程式碼進行擴充，感謝原作者與開源貢獻者提供研究及實作基礎。
+
+- **原作者**：Fei Liu、Xialiang Tong、Mingxuan Yuan、Xi Lin、Fu Luo、Zhenkun Wang、Zhichao Lu、Qingfu Zhang。
+- **原始 Repository**：[FeiLiu36/EoH](https://github.com/FeiLiu36/EoH)。
+- **論文**：[Evolution of Heuristics: Towards Efficient Automatic Algorithm Design Using Large Language Model](https://proceedings.mlr.press/v235/liu24bs.html)，ICML 2024。
+
+若研究中使用到 EoH 框架，請引用原始論文：
+
+```bibtex
+@inproceedings{fei2024eoh,
+  title = {Evolution of Heuristics: Towards Efficient Automatic Algorithm Design Using Large Language Model},
+  author = {Liu, Fei and Tong, Xialiang and Yuan, Mingxuan and Lin, Xi and Luo, Fu and Wang, Zhenkun and Lu, Zhichao and Zhang, Qingfu},
+  booktitle = {Proceedings of the 41st International Conference on Machine Learning},
+  year = {2024},
+  volume = {235},
+  pages = {32201--32223},
+  series = {Proceedings of Machine Learning Research},
+  url = {https://proceedings.mlr.press/v235/liu24bs.html}
+}
 ```
 
 ## Poster
